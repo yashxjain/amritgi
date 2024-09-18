@@ -78,8 +78,8 @@ const CardFlip = ({ course }) => (
             <Back>
                 <Card sx={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
                     <CardHeader
-                        title="Course Details"
-                        subheader={`Degree: ${course.degree}`}
+                        title={course.degree}
+                        // subheader={`Degree: ${course.degree}`}
                         sx={{ width: '100%', backgroundColor: '#1976d2', color: 'white', textAlign: 'center', paddingBottom: '0' }}
                     />
                     <Divider />

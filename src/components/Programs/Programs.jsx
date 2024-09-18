@@ -41,7 +41,8 @@ const Programs = () => {
                 textColor="inherit"
                 centered
                 sx={{
-                    backgroundColor: '#ffffff',
+                    backgroundColor: 'blue',
+                    color:"white",
                     borderRadius: '8px',
                     boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
                     marginBottom: '16px',

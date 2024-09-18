@@ -1,31 +1,40 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { FaLinkedin, FaFacebook, FaTwitter } from 'react-icons/fa';
+import { FaLinkedin, FaFacebook, FaTwitter,FaEnvelope } from 'react-icons/fa';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
-import './index.css'; // Import the CSS file for styling
+import './index.css';
 import Courses from './pages/Courses';
 import Gallery from './pages/Gallery';
 import Departments from './pages/Departments';
 import ContactUs from './pages/ContactUs';
-// import Login from './pages/Login';
+import VideoPlayer from './components/VideoPlayer/VideoPlayer';
+import Examination from './pages/Examination';
+import Syllabus from './pages/Syllabus';
+import Result from './pages/Result';
 
 const App = () => {
+      const [playState, setPlayState] = useState(false);
+
   return (
     <BrowserRouter>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<AboutUs />} />
+        <Route path="/about" element={<AboutUs setPlayState={setPlayState} />} />
         <Route path="/courses" element={<Courses />} />
-        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/events" element={<Gallery />} />
         <Route path="/departments" element={<Departments />} />
         <Route path="/contact" element={<ContactUs />} />
-        {/* <Route path="/login" element={<Login />} /> */}
+        <Route path="/examination" element={<Examination/>} />
+        <Route path="/syllabus" element={<Syllabus/>} />
+                <Route path="/result" element={<Result/>} />
+
       </Routes>
       <Footer />
+            <VideoPlayer playState={playState} setPlayState={setPlayState} />
 
       {/* Floating Icons */}
       <div className="floating-icons">
@@ -39,6 +48,7 @@ const App = () => {
           <FaTwitter />
         </a>
       </div>
+     
     </BrowserRouter>
   );
 }

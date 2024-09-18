@@ -92,30 +92,7 @@ const slider = useRef();
                 <h4>Law College is Affiliated to "Veer Madho Singh Bhandari Uttarakhand Technical University, Dehradun" and Bar Council of India, New Delhi.</h4>
                   <br />
                 </div>
-                <div className='testimonials'>
-            <img src={next_icon} alt="" className='next-btn' onClick={slideForward} />
-            <img src={back_icon} alt="" className='back-btn' onClick={slideBackward} />
-            <div className="slider gallery">
-                <ul ref={slider}>
-                    <li>
-                       <img src={gallery_1} alt="" />
-                    </li>
-                    <li>
-                       <img src={gallery_2} alt="" />
-                    </li>
-                     <li>
-                       <img src={gallery_3} alt="" />
-                    </li>
-                     <li>
-                       <img src={gallery_4} alt="" />
-                    </li>
-                     <li>
-                       <img src={gallery_2} alt="" />
-                    </li>
-                </ul>
-            </div>
-  
-                </div>
+                
                 <div>
                     
                   <br />
@@ -136,6 +113,8 @@ const slider = useRef();
                   <br />
                 </div>
             </div>
+                        <VideoPlayer playState={playState} setPlayState={setPlayState} />
+
         </>
     )
 }

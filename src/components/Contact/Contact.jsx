@@ -5,6 +5,7 @@ import mail_icon from '../../assets/mail-icon.png';
 import phone_icon from '../../assets/phone-icon.png';
 import location_icon from '../../assets/location-icon.png';
 import white_arrow from '../../assets/white-arrow.png';
+import { Link } from 'react-router-dom';
 
 const Contact = () => {
     const [result, setResult] = React.useState("");
@@ -34,19 +35,31 @@ const Contact = () => {
 
 
     return (
+      <>
         <div className='contact'>
             <div className="contact-col">
-                <h2>AMRIT GROUP OF INSTITUTIONS</h2>
-                <h3>Send us a message <img src={msg_icon} alt="" /></h3>
-                <p>Feel free to reach out through contact form or find our contact information below. Your feedback, questions, and suggestions are important to us as we strive to provide exceptional service to our community.</p>
-                <ul>
-                    <li><img src={mail_icon} alt="" />vikastyagi77@yahoo.com</li>
-                    <li><img src={phone_icon} alt="" />+91-9718603456</li>
-                    <li><img src={location_icon} alt="" />Village & Posr Office: Dhanauri, <br /> Roorkee, Haridwar (U.K).</li>
-                </ul>
+                
+                <div style={{ marginTop: "10px", textAlign: "center" }}>
+       
+        <div style={{ width: "100%", height: "350px", marginTop: "20px" }}>
+          <iframe
+  title="location-map"
+  width="80%"
+  height="400"
+  style={{ border: 0 }}
+  loading="lazy"
+  allowFullScreen
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3484.4899564192885!2d77.8787603!3d29.9350683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39094b1a74081859%3A0x53533791fc112a51!2sAmrit%20Law%20College!5e0!3m2!1sen!2sin!4v1695032832952!5m2!1sen!2sin"
+/>
+
+
+        </div>
+      </div>
             </div>
             <div className="contact-col">
                 <form onSubmit={onSubmit}>
+                                    <h3>Send us a message <img src={msg_icon} alt="" /></h3>
+
                     <label>Your name</label>
                     <input type="text" name='name' placeholder='Enter your name' required />
                     <label>Phone Number</label>
@@ -61,6 +74,9 @@ const Contact = () => {
             </div>
 
         </div>
+        
+                
+       </>
     )
 }
 

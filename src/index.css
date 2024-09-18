@@ -1,10 +1,9 @@
- @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Outfit", sans-serif;
+    font-family: "Open Sans", sans-serif;
  }
 
  body {
@@ -128,4 +127,53 @@
  }
  html {
     scroll-behavior: smooth;
+ }
+
+ .floating-icons1 {
+    display: flex;
+   justify-content: space-around;
+    flex-direction: row;
+    
+ }
+
+ .floating-icons1 a {
+    color: #fff;
+    background-color: #b53900;
+    /* For LinkedIn default color */
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+ }
+
+ .floating-icons1 a:hover {
+    background-color: #e14418;
+ }
+
+ .floating-icons1 a:nth-child(2) {
+    background-color: #3b5998;
+    /* Facebook */
+ }
+
+ .floating-icons1 a:nth-child(2):hover {
+    background-color: #2d4373;
+ }
+
+ .floating-icons1 a:nth-child(3) {
+    background-color: #1da1f2;
+    /* Twitter */
+ }
+
+ .floating-icons1 a:nth-child(3):hover {
+    background-color: #0d95e8;
+ }
+
+ .floating-icons1 a svg {
+    color: white;
+    font-size: 20px;
  }

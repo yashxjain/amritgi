@@ -1,6 +1,6 @@
 import React from 'react';
 // import './Campus.css'; // Ensure your CSS file includes any necessary styles
-
+import pdf from "../../assets/AMRIT LAW COLLEGE - ADMISSION FORM.pdf"
 const Addmission = () => {
   // Inline styles for the download section and button
   const sectionStyle = {
@@ -34,9 +34,10 @@ const Addmission = () => {
         Once completed, you can submit it through our online portal or by mail.
       </p>
       <a 
-      className='btn'
-        href="/path-to-your-admission-form.pdf" // Replace with the actual path to your PDF file
-        download="Admission_Form.pdf"
+       className='btn'
+        href={pdf} // Link to the PDF file
+        target="_blank" // Opens in a new tab
+        rel="noopener noreferrer" // Improves security
         style={buttonStyle}
       >
         Download Admission Form
