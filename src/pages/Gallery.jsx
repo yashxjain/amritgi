@@ -11,7 +11,7 @@ const Gallery = () => {
   return (
 
     <div className='campus' style={{marginTop:"100px"}}>
-        <Title subTitle='Gallery' title='Events Photos' />
+        <Title subTitle='Gallery' title='Events Photos'/>
        <Campus/>
         {/* <button className='btn dark-btn'>See more here <img src={white_arrow} alt="" /></button> */}
     </div>

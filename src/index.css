@@ -27,7 +27,9 @@
  /* .container {
    width: 100%;
  } */
-
+p{
+   text-align: justify;
+}
  .btn {
     background: #FFF;
     color: #212121;
