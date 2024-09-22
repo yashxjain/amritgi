@@ -1,38 +1,90 @@
-.campus{
+.campus {
     margin: 80px auto;
     width: 90%;
     text-align: center;
+    position: relative;
 }
-.gallery{
+
+.carousel {
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
-    margin-bottom: 40px;
-}
-
-.gallery img{
-    width: 200px;
-    height: 300px;
-    object-fit: cover;
+    overflow: hidden;
     border-radius: 10px;
-    transition: transform 0.3s, box-shadow 0.2s;
+    /* Optional: Add border radius */
 }
 
-.gallery img:hover{
-    opacity: 0.9;
+.carousel-images {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
-    transform: scale(1.1);  
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    /* Pointer cursor for clickable images */
 }
 
-/*======== media querry =========*/
+.carousel-images img {
+    width: 300px;
+    /* Fixed width */
+    height: 200px;
+    /* Fixed height */
+    object-fit: cover;
+    /* Cover image */
+    border-radius: 10px;
+    /* Optional: Add border radius */
+    transition: transform 0.3s ease-in-out;
+}
 
-@media (max-width: 800px){
-    .gallery{
-        flex-wrap: wrap;
-    }
-    .gallery img{
-        width: 48%;
-        margin-bottom: 25px;
-    }
+.next-btn,
+.back-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    /* Adjust button size */
+    height: 40px;
+    /* Adjust button size */
+}
+
+.next-btn {
+    right: 10px;
+    /* Adjust positioning */
+}
+
+.back-btn {
+    left: 10px;
+    /* Adjust positioning */
+}
+
+/* Modal styles */
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+}
+
+.modal-content {
+    position: relative;
+}
+
+.modal-content img {
+    max-width: 50%;
+    max-height: 50%;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
 }

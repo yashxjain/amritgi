@@ -1,7 +1,6 @@
 import React from 'react';
 import { Card, CardContent, Typography, CardActionArea, CardHeader, Divider } from '@mui/material';
 import { styled } from '@mui/system';
-import image from "../../assets/law.png";
 
 const FlipContainer = styled('div')({
     position: 'relative',
@@ -51,35 +50,37 @@ const Back = styled(CardSide)({
     alignItems: 'center',
     textAlign: 'center',
 });
+
 const InfoTypography = styled(Typography)({
     marginBottom: '8px',
     fontWeight: '500',
 });
+
 const CardImage = styled('img')({
-    width: '130px',
+    width: '250px',
     height: 'auto',
     marginBottom: '8px',
-    display: 'block', // Ensure the image is treated as a block element
+    display: 'block',
 });
 
 const CardFlip = ({ course }) => (
     <FlipContainer>
         <FlipCard>
+            {/* Front Side */}
             <Front>
-                <Card sx={{ width: '100%', height: '100%' }}>
-                    <CardActionArea>
-                        <CardContent>
-                            <CardImage src={image} alt="Course" />
-                            <Typography variant="h6">{course.degree}</Typography>
+                    <CardActionArea sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+                        <CardContent sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+                            <CardImage src={course.image} alt="Course" />
+                            <Typography variant="h6" sx={{ textAlign: 'center' }}>{course.degree}</Typography>
                         </CardContent>
                     </CardActionArea>
-                </Card>
             </Front>
+
+            {/* Back Side */}
             <Back>
                 <Card sx={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
                     <CardHeader
                         title={course.degree}
-                        // subheader={`Degree: ${course.degree}`}
                         sx={{ width: '100%', backgroundColor: '#1976d2', color: 'white', textAlign: 'center', paddingBottom: '0' }}
                     />
                     <Divider />

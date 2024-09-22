@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Tabs, Tab, Grid, Typography, Button } from '@mui/material';
+import { Box, Tabs, Tab, Typography, Button } from '@mui/material';
 
 // Mock data for colleges, courses, and result sheets with their respective PDF links and images.
 const resultData = {
@@ -88,27 +88,44 @@ const Result = () => {
             {/* Tabs for college selection */}
             <Tabs
                 value={activeTab}
-                onChange={handleTabChange}
-                indicatorColor="secondary"
-                textColor="inherit"
-                centered
-                sx={{
-                    backgroundColor: 'blue',
-                    color: "white",
-                    borderRadius: '8px',
-                    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
-                    marginBottom: '16px',
-                    '& .MuiTab-root': {
-                        fontWeight: 'bold',
-                        textTransform: 'none'
-                    },
-                    '& .MuiTabs-indicator': {
-                        backgroundColor: '#1976d2',
-                    },
-                }}
+                    onChange={handleTabChange}
+                    indicatorColor="transparent"
+                    textColor="inherit"
+                    centered
+                    sx={{
+                        width: '100%',
+                        background: 'linear-gradient(to right, #1976d2, #42a5f5)', // Gradient background
+                        borderRadius: '10px',
+                        padding: '8px',
+                        marginBottom: '16px',
+                        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
+                    }}
             >
                 {Object.keys(resultData).map(college => (
-                    <Tab key={college} label={college} value={college} />
+                    <Tab key={college} label={college} value={college} 
+                   
+                            sx={{
+                                color: 'white',
+                                fontWeight: 'bold',
+                                textTransform: 'none',
+                                borderRadius: '10px',
+                                padding: '10px 20px',
+                                margin: '0 56px', // Space between each tab
+
+                                backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                                transition: 'background-color 0.3s, transform 0.3s',
+                                '&:hover': {
+                                    backgroundColor: 'rgba(255, 255, 255, 0.3)',
+                                    transform: 'scale(1.05)',
+                                },
+                                '&.Mui-selected': {
+                                    backgroundColor: '#ffffff',
+                                    color: '#1976d2',
+                                    fontWeight: 'bold',
+                                    boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
+                                    transform: 'scale(1.1)',
+                                },
+                            }}/>
                 ))}
             </Tabs>
 
@@ -127,6 +144,9 @@ const Result = () => {
                                 color: "white",
                                 border: "none",
                                 cursor: "pointer",
+                                '&:hover': {
+                                    backgroundColor: '#0056b3',
+                                }
                             }}
                         >
                             {course}
@@ -135,6 +155,7 @@ const Result = () => {
                 </Box>
             ) : (
                 <>
+                 <Box sx={{ textAlign: 'center', marginBottom: '20px' }}>
                     <Typography variant="h6">Select Semester for {selectedCourse}</Typography>
                     {Object.keys(resultData[activeTab].courses[selectedCourse].semesters).map(semester => (
                         <Button
@@ -150,12 +171,15 @@ const Result = () => {
                                 color: "white",
                                 border: "none",
                                 cursor: "pointer",
+                                '&:hover': {
+                                    backgroundColor: '#0056b3',
+                                }
                             }}
                         >
                             {semester}
                         </Button>
                     ))}
-
+</Box>
                     {/* Display the image for the selected semester */}
                     {selectedSemester && (
                         <Box sx={{ textAlign: 'center', marginTop: '20px' }}>

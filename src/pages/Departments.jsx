@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 
-
+import department from "../assets/department.png";
 const Departments = () => {
 
 
@@ -11,7 +11,7 @@ const Departments = () => {
 
  <div className='about'>
       <div className="about-left">
-        <img src="#" alt="" className='departments-img' />
+        <img src={department} alt="" className='departments-img' style={{width:"400px"}} />
         {/* <img src={play_icon} alt="" className='play-icon' onClick={() => { setPlayState(true) }} /> */}
       </div>
       <div className="about-right">

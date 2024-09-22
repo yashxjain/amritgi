@@ -14,6 +14,7 @@ import VideoPlayer from './components/VideoPlayer/VideoPlayer';
 import Examination from './pages/Examination';
 import Syllabus from './pages/Syllabus';
 import Result from './pages/Result';
+import Education from './components/Department/Education';
 
 const App = () => {
       const [playState, setPlayState] = useState(false);
@@ -31,6 +32,7 @@ const App = () => {
         <Route path="/examination" element={<Examination/>} />
         <Route path="/syllabus" element={<Syllabus/>} />
                 <Route path="/result" element={<Result/>} />
+                 <Route path="/education-department" element={<Education/>} />
 
       </Routes>
       <Footer />

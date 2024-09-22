@@ -1,15 +1,14 @@
+/* ===== Navbar Styling ===== */
 nav {
     width: 100%;
     color: #fff;
     padding: 4px 20px;
-    /* Adjusted padding to include some spacing */
     position: fixed;
     top: 0;
     left: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* Ensures logo and contact button are in corners */
     z-index: 10;
     background: transparent;
 }
@@ -23,19 +22,17 @@ nav ul {
     display: flex;
     align-items: center;
     gap: 20px;
-    /* Ensures space between tabs */
 }
 
 nav ul li {
     list-style: none;
     font-size: 16px;
     margin: 0;
+    position: relative;
+    /* To position dropdown relative to its parent */
 }
 
-nav.sticky {
-    background: #3a48c4;
-}
-
+nav.sticky,
 .dark-nav {
     background: #3a48c4;
     transition: background-color 0.5s;
@@ -47,7 +44,6 @@ nav.sticky {
 
 .contact-button {
     background-color: #ff6b6b;
-    /* Custom button color */
     color: #fff;
     padding: 10px 20px;
     border-radius: 4px;
@@ -58,8 +54,51 @@ nav.sticky {
     background-color: #ff4c4c;
 }
 
-/*======== media queries =========*/
+/* ===== Dropdown Styling with Animation ===== */
+ul.dropdown {
+    display: block;
+    position: absolute;
+    top: 120%;
+    /* Position dropdown below the parent */
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    border-radius: 4px;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: all 0.4s ease-in-out;
+    /* Smooth fade and slide down */
+}
 
+ul.dropdown li {
+    padding: 8px 16px;
+    width: 200px;
+}
+
+ul.dropdown li a {
+    text-decoration: none;
+    color: #000;
+    display: block;
+}
+
+ul.dropdown li a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Show dropdown with animation when hovering over the parent list item */
+li:hover>ul.dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    /* Slide down to original position */
+}
+
+/* ===== Mobile Menu Styling ===== */
 @media (max-width: 1000px) {
     .logo {
         width: 140px;
@@ -101,34 +140,4 @@ nav.sticky {
     .hide-mobile-menu {
         right: -200px;
     }
-}
-
-ul.dropdown {
-    display: none;
-    position: absolute;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    border-radius: 4px;
-}
-
-ul.dropdown li {
-    padding: 8px 16px;
-}
-
-ul.dropdown li a {
-    text-decoration: none;
-    color: #000;
-    display: block;
-}
-
-ul.dropdown li a:hover {
-    background-color: #f1f1f1;
-}
-
-li:hover>ul.dropdown {
-    display: flex;
-    flex-direction: column;
 }
