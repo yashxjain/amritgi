@@ -63,7 +63,15 @@
     .contact{
         display: block;
     }
-    .contact-col{
+    .contact-col:nth-child(1){
         padding: 20px;
+        margin-bottom: 50px;
     }
+        .floating-icons1 {
+            /* height: max-content; */
+            display: flex;
+            flex-direction: column;
+           align-items: center;
+           gap: 20px;
+        }
 }

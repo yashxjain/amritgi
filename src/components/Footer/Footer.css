@@ -18,6 +18,7 @@
     .footer{
         display: block;
         text-align: center;
+        padding: 0px 50px;
     }
     .footer ul li{
         margin: 10px;
